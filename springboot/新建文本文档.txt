@@ -1,0 +1,21 @@
+controller
+@GetMapping("/bookType")
+    public List<Ranking> findBookType(){return rankingService.findAllByBookType();}
+
+iRankingService
+public List<Ranking> findAllByBookType();
+
+RankingService
+@Resource
+    private RankingMapper rankingMapper;
+
+    public List<Ranking> findAllByBookType() {
+        return rankingMapper.findAllByBookType();
+    }
+
+Mapper
+public List<Ranking> findAllByBookType();
+
+<select id="findAllByBookType" resultType="com.junjie.demo.entity.Ranking">
+        SELECT * FROM ranking ORDER BY rankingR
+    </select>
